@@ -46,7 +46,7 @@ public class PricingTest {
     @Test
     public void getPriceWithInvalidId() throws Exception {
         this.mockMvc.perform(
-                get(new URI("/services/price?vehicleId=" + VALID_ID))
+                get(new URI("/services/price?vehicleId=" + INVALID_ID))
                         .contentType(String.valueOf(StandardCharsets.UTF_8))
                         .accept(String.valueOf(StandardCharsets.UTF_8)));
         andExpect(status().isNotFound());
